@@ -1,2 +1,4 @@
 Django>=3.2,<3.3
+django-debug-toolbar==3.2.3
+ipdb==0.13.9
 wagtail>=2.15,<2.16
