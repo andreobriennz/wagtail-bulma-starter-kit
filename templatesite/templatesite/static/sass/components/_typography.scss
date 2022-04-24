@@ -19,12 +19,12 @@
 }
 
 %heading {
-    font-weight: 600;
+    font-weight: 700;
     color: $black;
 }
 
 %small-heading {
-    font-weight: 400;
+    font-weight: 600;
     color: $black;
 }
 
@@ -44,15 +44,15 @@
     line-height: 32px;
 }
 %h4 {
-    @extend %heading;
+    @extend %small-heading;
     font-size: 24px;
 }
 %h5 {
-    @extend %heading;
+    @extend %small-heading;
     font-size: 20px;
 }
 %h6 {
-    @extend %heading;
+    @extend %small-heading;
     font-size: 18px;
 }
 
@@ -60,11 +60,11 @@ ul, ol {
     list-style-position: inside;
 }
 
-li {
-    margin-bottom: .25rem;
+ul li {
+    list-style-type: disc;
 }
 
-a, .link {
+.link {
     @extend %link;
 }
 
@@ -118,6 +118,9 @@ figure .hr {
 
 .lobotomized-owl-margins > * + * {
     margin-top: 1.5em;
+}
+.lobotomized-owl-margins-sm > * + * {
+    margin-top: .75em;
 }
 .richtext-block > * + * {
     margin-top: .75em;

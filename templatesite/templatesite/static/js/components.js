@@ -9,6 +9,12 @@ function toggleClass(element, className) {
     element.classList.toggle(className)
 }
 
+function toggleAriaExpanded(element) {
+    const currentValue = element.getAttribute('aria-expanded')
+    const newValue = currentValue === 'true' ? 'false' : 'true'
+    element.setAttribute('aria-expanded', newValue)
+}
+
 // only if not using `display: none;`
 function toggleTabindex(element) {
     if (element.tabIndex === 0) {
@@ -20,11 +26,12 @@ function toggleTabindex(element) {
 
 // COMPONENTS
 window.toggleNav = () => {
-    const hamburgerIcon = el('')
-    const navMenu = el('')
+    const hamburgerIcon = el('#nav-hamburger')
+    const navMenu = el('#mobile-nav')
 
     toggleClass(hamburgerIcon, 'is-active')
     toggleClass(navMenu, 'is-active')
+    toggleAriaExpanded(hamburgerIcon)
 }
 
 window.handleSearch = function(selector) {

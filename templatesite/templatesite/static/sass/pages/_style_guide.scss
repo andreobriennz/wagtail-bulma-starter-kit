@@ -1,0 +1,30 @@
+.style-guide-grid-1 {
+    @extend %flex-wrap;
+    gap: $column-gap;
+
+    .col {
+        @extend %flex-item;
+        border-radius: $radius-large;
+        overflow: hidden;
+
+        .content {
+            min-height: 100px;
+            padding: $column-gap;
+            background-color: $very-light-blue;
+        }
+    }
+}
+
+.style-guide-grid-2 {
+    @extend %flex-wrap;
+    gap: $column-gap;
+
+    .col {
+        @extend %flex-item;
+        border-radius: $radius-large;
+        overflow: hidden;
+        .card {
+            background-color: $very-light-blue;
+        }
+    }
+}

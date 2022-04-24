@@ -1,19 +1,10 @@
 // CONTAINERS
-%cols { // cols to avoid naming conflict with .columns in Bulma
+%flex-wrap { // for multiline flexbox grids. Also can use row-reverse and column-reverse
     display: flex;
-}
-%cols {
-    display: flex;
-}
-%cols {
-    display: flex;
-}
-
-// FLEX WRAP (For multiline flexbox grids. Also can use row-reverse and column-reverse)
-%flex-wrap {
     flex-wrap: wrap;
 }
 %flex-nowrap {
+    display: flex;
     flex-wrap: nowrap; // default
 }
 
@@ -49,6 +40,19 @@
     justify-content: space-between;
     justify-content: space-evenly;
 }
+
+
+// ITEM
+%flex-item {
+    width: 100%;
+    @media (min-width: $tablet) {
+        width: 50%;
+    }
+    @media (min-width: $desktop) {
+        width: 25%;
+    }
+}
+
 
 // GAP
 %default-gap {
@@ -108,17 +112,10 @@
 
 
 // EXAMPLE
-.example.parent {
-    @extend %cols;
+._example._parent {
     @extend %flex-wrap;
 
-    .child {
-        width: 100%;
-        @media (min-width: $tablet) {
-            width: 50%;
-        }
-        @media (min-width: $desktop) {
-            width: 25%;
-        }
+    ._child {
+        @extend %flex-item;
     }
 }

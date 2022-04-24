@@ -1,0 +1,160 @@
+{% load static wagtailcore_tags %}
+
+<figure class="image is-3by1">
+    <img src="https://bulma.io/images/placeholders/720x240.png">
+</figure>
+
+<article class="section-container article-width lobotomized-owl-margins-sm">
+    <h1 class="h1">Heading 1</h1>
+    <h2 class="h2">Heading 2</h2>
+    <h3 class="h3">Heading 3</h3>
+    <h4 class="h4">Heading 4</h4>
+    <h5 class="h5">Heading 5</h5>
+    <h6 class="h6">Heading 6</h6>
+
+    <p>{% lorem 1 b random %}</p>
+    <p>{% lorem 1 b random %}</p>
+    <p>{% lorem 1 b random %}</p>
+    <p>{% lorem 1 b random %}</p>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+</article>
+
+{% comment %} todo: fix width for %flex-item {% endcomment %}
+<section class="section-container">
+    <div class="style-guide-grid-1">
+        <div class="col">
+            <div class="content">1</div>
+        </div>
+
+        <div class="col">
+            <div class="content">2</div>
+        </div>
+
+        <div class="col">
+            <div class="content">3</div>
+        </div>
+
+        <div class="col">
+            <div class="content">4</div>
+        </div>
+    </div>
+</section>
+
+<section class="section-container">
+    <div class="buttons">
+        <button class="button">Button</button>
+        <a class="button">Link Styled as Button</a>
+    </div>
+
+    <div class="buttons">
+        <button class="button is-primary">Primary Button</button>
+        <button class="button is-link">Link Styled as Button Link</button>
+    </div>
+
+
+    <div class="buttons">
+        <button class="button is-info">Info</button>
+        <button class="button is-success">Success</button>
+        <button class="button is-warning">Warning</button>
+        <button class="button is-danger">Danger</button>
+    </div>
+
+    <div class="buttons">
+        <p>A simple <a href="https://example.com" class="link">link</a> can also appear in normal text.</p>
+    </div>
+</section>
+
+{% comment %} todo: add a .content class example here: https://bulma.io/documentation/elements/content/ {% endcomment %}
+
+{% comment %} todo: add image/caption examples {% endcomment %}
+
+<section class="section-container article-width">
+    {% comment %} How to add videos with Bulma: https://bulma.io/documentation/elements/image/ {% endcomment %}
+    <figure class="image is-16by9">
+        <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/YE7VzlLtp-4" frameborder="0" allowfullscreen></iframe>
+    </figure>
+</section>
+
+<section class="section-container">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="#">Bulma</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Components</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+        </ul>
+    </nav>
+</section>
+
+<section class="section-container">
+    <nav class="breadcrumb is-right" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="#">Bulma</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Components</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+        </ul>
+    </nav>
+</section>
+
+{% comment %} todo: fix width for %flex-item {% endcomment %}
+<section class="section-container">
+    <div class="style-guide-grid-2">
+        <div class="col">
+            {% include 'includes/style_guide/card_example_1.html' %}
+        </div>
+
+        <div class="col">
+            {% include 'includes/style_guide/card_example_1.html' %}
+        </div>
+
+        <div class="col">
+            {% include 'includes/style_guide/card_example_1.html' %}
+        </div>
+
+        <div class="col">
+            {% include 'includes/style_guide/card_example_1.html' %}
+        </div>
+    </div>
+</section>
+
+<section class="section-container">
+    <div class="style-guide-grid-2">
+        <div class="col">
+            {% include 'includes/style_guide/card_example_2.html' %}
+        </div>
+
+        <div class="col">
+            {% include 'includes/style_guide/card_example_2.html' %}
+        </div>
+
+        <div class="col">
+            {% include 'includes/style_guide/card_example_2.html' %}
+        </div>
+
+        <div class="col">
+            {% include 'includes/style_guide/card_example_2.html' %}
+        </div>
+    </div>
+</section>
+
+<section class="section-container">
+    {% include 'includes/style_guide/pagination_example.html' %}
+</section>
+
+{% comment %} todo: consider adding tabs {% endcomment %}
+
+<section class="section-container">
+    {% include 'includes/style_guide/form_example.html' %}
+</section>

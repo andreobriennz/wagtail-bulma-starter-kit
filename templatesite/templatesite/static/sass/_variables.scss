@@ -1,3 +1,5 @@
+// Update after setup: SASS variables
+
 // BULMA VARIABLES
 // https://bulma.io/documentation/customize/concepts/
 
@@ -6,35 +8,35 @@ $tablet: 768px;
 $desktop: 1280px;
 $large-monitor: 1900px;
 
-// // INITIAL VARIABLES (used by Bulma)
-// $red: #E20;
-// $orange: #F90;
-// $very-light-blue: #E2F2F4;
-// $light-blue: #B5E5E5;
-// $medium-blue: #378;
-// $dark-blue: #1F3F50;
+// INITIAL VARIABLES (used by Bulma)
+$red: #E20;
+$orange: #F90;
+$very-light-blue: #E2F2F4;
+$light-blue: #B5E5E5;
+$medium-blue: #378;
+$dark-blue: #1F3F50;
 $black: #222226;
-// $white: #FFF;
-// $light-gray: #FAFAFA;
+$white: #FFF;
+$light-gray: #FAFAFA;
 
-// // DERIVED VARIABLES (used by Bulma)
-// $primary: $ref;
+// DERIVED VARIABLES (used by Bulma)
+$primary: $medium-blue;
 
-// $text: $black;
+$text: $black;
 
-// $button-border-color: $orange;
-// $button-color: $orange;
-// $button-hover-color: $white;
-// $button-hover-border-color: $orange;
+$button-border-color: $orange;
+$button-color: $orange;
+$button-hover-color: $white;
+$button-hover-border-color: $orange;
 
-// $radius-small: 2px;
+$radius-small: 2px;
 $radius: 4px;
-// $radius-large: 8px;
-// $card-radius: $radius;
-// $box-radius: $radius;
+$radius-large: 8px;
+$card-radius: $radius;
+$box-radius: $radius;
 
-// $shadow: none;
-// $card-shadow: 5px 6px 17px rgba(0, 0, 0, 0.15);
+$shadow: none;
+$card-shadow: 5px 6px 17px rgba(0, 0, 0, 0.15);
 
 $column-gap: 0.75rem;
 
@@ -43,6 +45,6 @@ $column-gap: 0.75rem;
 $default-border-bottom: 0;
 $border-bottom-underline: $black solid 2px;
 
-$default-font-family: sans-serif;
+$default-font-family: 'Open Sans', sans-serif;
 
 $default-border-radius: $radius;
