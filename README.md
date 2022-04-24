@@ -32,6 +32,9 @@ $ ./manage.py createsuperuserv
 - Run the backend server: `$ ./manage.py runserver`
 - Compile SASS: `npm run watch` (or build it once with `npm run build`).
 
+# Front-end Styling
+- Parts of the site which will usually need to be updated early on (such as fonts and SASS variables) can be found by searching for `Update after setup:`
+
 
 # Misc
 * ipdb: Adding this to your code should act as a breakpoint when it runs: `import ipdb; ipdb.set_trace()`.
