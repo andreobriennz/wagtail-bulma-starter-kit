@@ -1,11 +1,11 @@
 // CONTAINERS
-%columns {
+%cols { // cols to avoid naming conflict with .columns in Bulma
     display: flex;
 }
-%columns {
+%cols {
     display: flex;
 }
-%columns {
+%cols {
     display: flex;
 }
 
@@ -52,25 +52,25 @@
 
 // GAP
 %default-gap {
-    gap: $default-gap;
+    gap: $column-gap;
 }
 %default-row-gap {
-    row-gap: $default-gap;
+    row-gap: $column-gap;
 }
 %default-column-gap {
-    column-gap: $default-gap;
+    column-gap: $column-gap;
 }
 %double-row-gap {
-    row-gap: $default-gap * 2; // todo: needs testing
+    row-gap: calc($column-gap * 2); // todo: needs testing
 }
 %double-column-gap {
-    column-gap: $default-gap * 2;
+    column-gap: calc($column-gap * 2);
 }
 %half-row-gap {
-    row-gap: $default-gap / 2;
+    row-gap: calc($column-gap / 2);
 }
 %half-column-gap {
-    column-gap: $default-gap / 2;
+    column-gap: calc($column-gap / 2);
 }
 
 
@@ -109,11 +109,10 @@
 
 // EXAMPLE
 .example.parent {
-    @extend %columns;
+    @extend %cols;
     @extend %flex-wrap;
 
     .child {
-        @extend %column;
         width: 100%;
         @media (min-width: $tablet) {
             width: 50%;

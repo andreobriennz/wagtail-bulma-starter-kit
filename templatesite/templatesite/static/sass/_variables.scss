@@ -13,7 +13,7 @@ $large-monitor: 1900px;
 // $light-blue: #B5E5E5;
 // $medium-blue: #378;
 // $dark-blue: #1F3F50;
-// $black: #222226;
+$black: #222226;
 // $white: #FFF;
 // $light-gray: #FAFAFA;
 
@@ -28,7 +28,7 @@ $large-monitor: 1900px;
 // $button-hover-border-color: $orange;
 
 // $radius-small: 2px;
-// $radius: 4px;
+$radius: 4px;
 // $radius-large: 8px;
 // $card-radius: $radius;
 // $box-radius: $radius;
@@ -36,11 +36,13 @@ $large-monitor: 1900px;
 // $shadow: none;
 // $card-shadow: 5px 6px 17px rgba(0, 0, 0, 0.15);
 
+$column-gap: 0.75rem;
 
-// // CUSTOM VARIABLES (not related to Bulma)
-// $default-border-bottom: 0;
-// $border-bottom-underline: $black solid 2px;
 
-// $default-font-family: sans-serif;
+// CUSTOM VARIABLES (not related to Bulma)
+$default-border-bottom: 0;
+$border-bottom-underline: $black solid 2px;
 
-// $default-border-radius: $radius;
+$default-font-family: sans-serif;
+
+$default-border-radius: $radius;
