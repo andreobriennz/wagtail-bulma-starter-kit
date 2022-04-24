@@ -1,0 +1,124 @@
+* {
+    font-family: $default-font-family;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $black;
+}
+
+*::selection {
+    // background-color: darken($light-blue, 15%);
+}
+
+%link {
+    display: inline;
+    color: $black;
+    border-bottom: $border-bottom-underline;
+    &:hover {
+        border-bottom: none;
+    }
+}
+
+%heading {
+    font-weight: 600;
+    color: $black;
+}
+
+%small-heading {
+    font-weight: 400;
+    color: $black;
+}
+
+%h1 {
+    @extend %heading;
+    font-size: 64px;
+    line-height: 64px;
+}
+%h2 {
+    @extend %heading;
+    font-size: 48px;
+    line-height: 48px;
+}
+%h3 {
+    @extend %heading;
+    font-size: 32px;
+    line-height: 32px;
+}
+%h4 {
+    @extend %heading;
+    font-size: 24px;
+}
+%h5 {
+    @extend %heading;
+    font-size: 20px;
+}
+%h6 {
+    @extend %heading;
+    font-size: 18px;
+}
+
+ul, ol {
+    list-style-position: inside;
+}
+
+li {
+    margin-bottom: .25rem;
+}
+
+a, .link {
+    @extend %link;
+}
+
+.h1 {
+    @extend %h1;
+}
+.h2 {
+    @extend %h2;
+}
+.h3 {
+    @extend %h3;
+}
+.h4 {
+    @extend %h4;
+}
+.h5 {
+    @extend %h5;
+}
+.h6 {
+    @extend %h6;
+}
+
+body .richtext-block {
+    h1 {
+        @extend %h1;
+    }
+    h2 {
+        @extend %h2;
+    }
+    h3 {
+        @extend %h3;
+    }
+    h4 {
+        @extend %h4;
+    }
+    h5 {
+        @extend %h5;
+    }
+    h6 {
+        @extend %h6;
+    }
+}
+
+.hr {
+    margin: 2rem 0;
+    margin: 0;
+}
+figure .hr {
+    margin: .25rem 0;
+}
+
+.lobotomized-owl-margins > * + * {
+    margin-top: 1.5em;
+}
+.richtext-block > * + * {
+    margin-top: .75em;
+}

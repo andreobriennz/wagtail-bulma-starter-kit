@@ -1,0 +1,29 @@
+.large-screen-container {
+    @media (min-width: 1440px) {
+        max-width: 1440px !important;
+        margin: 0 auto;
+    }
+}
+
+.section-container {
+    margin: 1rem;
+    @media (min-width: $desktop) {
+        margin: 4rem 3rem;
+    }
+}
+
+.section-container-x {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @media (min-width: $desktop) {
+        margin-left: 4rem 3rem;
+        margin-right: 4rem 3rem;
+    }
+}
+
+.section-container-height {
+    height: 1rem;
+    @media (min-width: $desktop) {
+        height: 4rem 3rem;
+    }
+}

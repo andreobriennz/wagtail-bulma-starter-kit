@@ -1,0 +1,125 @@
+// CONTAINERS
+%columns {
+    display: flex;
+}
+%columns {
+    display: flex;
+}
+%columns {
+    display: flex;
+}
+
+// FLEX WRAP (For multiline flexbox grids. Also can use row-reverse and column-reverse)
+%flex-wrap {
+    flex-wrap: wrap;
+}
+%flex-nowrap {
+    flex-wrap: nowrap; // default
+}
+
+// flex direction
+%flex-row {
+    flex-direction: row;
+}
+%flex-row-reverse {
+    flex-direction: row-reverse;
+}
+%flex-column {
+    flex-direction: column;
+}
+
+// justify-content (container) (for flexbox, but will also apply to grid)
+// note: safe/unsafe not supported currently in most browsers, but could add it here in the future
+%justify-start {
+    justify-content: start;
+}
+%justify-end {
+    justify-content: end;
+}
+%justify-center {
+    justify-content: center;
+}
+%justify-space-around {
+    justify-content: space-around;
+}
+%justify-space-between {
+    justify-content: space-between;
+}
+%justify-space-evenly { // usually prefer this over space between as it avoids double space between inner items. Falls back to space-between
+    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
+// GAP
+%default-gap {
+    gap: $default-gap;
+}
+%default-row-gap {
+    row-gap: $default-gap;
+}
+%default-column-gap {
+    column-gap: $default-gap;
+}
+%double-row-gap {
+    row-gap: $default-gap * 2; // todo: needs testing
+}
+%double-column-gap {
+    column-gap: $default-gap * 2;
+}
+%half-row-gap {
+    row-gap: $default-gap / 2;
+}
+%half-column-gap {
+    column-gap: $default-gap / 2;
+}
+
+
+// SPACING (alt ways to space items at top/bottom of parent)
+%flex-equal-space {
+    flex: 1;
+}
+
+%flex-position-bottom {
+    margin-top: auto; // https://css-tricks.com/designing-a-product-page-layout-with-flexbox/
+}
+
+%flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+%flex-center-y {
+    display: flex;
+    align-items: center;
+}
+%flex-center-x {
+    display: flex;
+    justify-content: center;
+}
+.flex-center {
+    @extend %flex-center;
+}
+.flex-center-y {
+    @extend %flex-center-x;
+}
+.flex-center-x {
+    @extend %flex-center-y;
+}
+
+
+// EXAMPLE
+.example.parent {
+    @extend %columns;
+    @extend %flex-wrap;
+
+    .child {
+        @extend %column;
+        width: 100%;
+        @media (min-width: $tablet) {
+            width: 50%;
+        }
+        @media (min-width: $desktop) {
+            width: 25%;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+// Bulma adds -.75rem margin around .columns classes, but sometimes this conflicts with our code
+// note: it will also add more in certain cases, so in the future we may need to handle this too
+body .columns-without-margin-x {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+body .column-without-padding-x {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+body .desktop\:column-without-padding-x {
+    @media (min-width: $desktop) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
