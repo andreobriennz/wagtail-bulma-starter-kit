@@ -1,7 +1,7 @@
 * {
     font-family: $default-font-family;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.2;
     color: $black;
 }
 
@@ -21,27 +21,28 @@
 %heading {
     font-weight: 700;
     color: $black;
+    line-height: 1.5;
+    margin-top: 0.25rem; // todo not working
 }
 
 %small-heading {
     font-weight: 600;
     color: $black;
+    line-height: 1.5;
+    margin-top: 0.25rem; // todo not working
 }
 
 %h1 {
     @extend %heading;
     font-size: 64px;
-    line-height: 64px;
 }
 %h2 {
     @extend %heading;
     font-size: 48px;
-    line-height: 48px;
 }
 %h3 {
     @extend %heading;
     font-size: 32px;
-    line-height: 32px;
 }
 %h4 {
     @extend %small-heading;
@@ -54,6 +55,16 @@
 %h6 {
     @extend %small-heading;
     font-size: 18px;
+}
+
+.lobotomized-owl-margins > * + * {
+    margin-top: 1.5em;
+}
+.lobotomized-owl-margins-sm > * + * {
+    margin-top: .75em;
+}
+.richtext-block > * + * {
+    margin-top: .75em;
 }
 
 ul, ol {
@@ -114,14 +125,4 @@ body .richtext-block {
 }
 figure .hr {
     margin: .25rem 0;
-}
-
-.lobotomized-owl-margins > * + * {
-    margin-top: 1.5em;
-}
-.lobotomized-owl-margins-sm > * + * {
-    margin-top: .75em;
-}
-.richtext-block > * + * {
-    margin-top: .75em;
 }

@@ -4,6 +4,28 @@
     <img src="https://bulma.io/images/placeholders/720x240.png">
 </figure>
 
+<section class="section-container">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="#">Bulma</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Components</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+        </ul>
+    </nav>
+</section>
+
+<section class="section-container">
+    <nav class="breadcrumb is-right" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="#">Bulma</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Components</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+        </ul>
+    </nav>
+</section>
+
 <article class="section-container article-width lobotomized-owl-margins-sm">
     <h1 class="h1">Heading 1</h1>
     <h2 class="h2">Heading 2</h2>
@@ -81,31 +103,10 @@
 
 <section class="section-container article-width">
     {% comment %} How to add videos with Bulma: https://bulma.io/documentation/elements/image/ {% endcomment %}
+    {% comment %} note: using wagtail embed block will handle more advanced things like social media {% endcomment %}
     <figure class="image is-16by9">
         <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/YE7VzlLtp-4" frameborder="0" allowfullscreen></iframe>
     </figure>
-</section>
-
-<section class="section-container">
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="#">Bulma</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Components</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
-        </ul>
-    </nav>
-</section>
-
-<section class="section-container">
-    <nav class="breadcrumb is-right" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="#">Bulma</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Components</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
-        </ul>
-    </nav>
 </section>
 
 {% comment %} todo: fix width for %flex-item {% endcomment %}
@@ -150,11 +151,20 @@
 </section>
 
 <section class="section-container">
-    {% include 'includes/style_guide/pagination_example.html' %}
+    {% include 'includes/style_guide/form_example.html' %}
 </section>
 
-{% comment %} todo: consider adding tabs {% endcomment %}
+{% comment %} NOTE: .conditional-section-container will only apply the section container if the child element as the class .section-has-margin {% endcomment %}
+<section class="conditional-section-container">
+    <figure class="image is-3by1">
+        <img src="https://bulma.io/images/placeholders/720x240.png">
+    </figure>
+</section>
 
 <section class="section-container">
-    {% include 'includes/style_guide/form_example.html' %}
+    {% include 'includes/style_guide/accordion.html' %}
+</section>
+
+<section class="section-container">
+    {% include 'includes/style_guide/pagination_example.html' %}
 </section>

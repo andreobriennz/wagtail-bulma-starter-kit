@@ -5,7 +5,8 @@
     }
 }
 
-.section-container {
+.section-container,
+.conditional-section-container .section-has-margin { // todo: find a better name for .section-has-margin?
     margin: 1rem 1rem;
     @media (min-width: $tablet) {
         margin: 2rem 2rem;

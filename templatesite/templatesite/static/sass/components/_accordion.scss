@@ -1,0 +1,25 @@
+.accordion {
+    border-top: $light-blue solid 1px;
+
+    .accordion-arrow {
+        float: right;
+    }
+}
+
+.accordion-item {
+    border-bottom: $light-blue solid 1px;
+
+    .accordion-title {
+        padding: .75rem 0;
+        @extend %h4;
+        &.unstyled-button {
+            width: 100%;
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+
+    .accordion-content {
+        padding-bottom: .75rem;
+    }
+}
