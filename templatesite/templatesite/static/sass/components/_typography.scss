@@ -1,7 +1,7 @@
 * {
     font-family: $default-font-family;
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 1.25;
     color: $black;
 }
 
@@ -22,14 +22,14 @@
     font-weight: 700;
     color: $black;
     line-height: 1.5;
-    margin-top: 0.25rem; // todo not working
+    // margin-top: 0.25rem; // todo not working
 }
 
 %small-heading {
     font-weight: 600;
     color: $black;
     line-height: 1.5;
-    margin-top: 0.25rem; // todo not working
+    // margin-top: 0.25rem; // todo not working
 }
 
 %h1 {
@@ -57,23 +57,38 @@
     font-size: 18px;
 }
 
-.lobotomized-owl-margins > * + * {
-    margin-top: 1.5em;
+.lobotomized-owl-margins-lg > * + * {
+    margin-top: $lg-line-margins;
 }
 .lobotomized-owl-margins-sm > * + * {
-    margin-top: .75em;
+    margin-top: $sm-line-margins;
 }
 .richtext-block > * + * {
-    margin-top: .75em;
+    margin-top: $sm-line-margins;
+}
+.margins-sm-top {
+    margin-top: $sm-line-margins;
 }
 
-ul, ol {
+ul {
+    list-style-type: disc;
     list-style-position: inside;
 }
-
-ul li {
-    list-style-type: disc;
+ ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+ }
+ul ul, ol ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    margin-left: 15px;
 }
+ ol ol, ul ol {
+    list-style-type: lower-latin;
+    list-style-position: inside;
+    margin-left: 15px;
+}
+
 
 .link {
     @extend %link;

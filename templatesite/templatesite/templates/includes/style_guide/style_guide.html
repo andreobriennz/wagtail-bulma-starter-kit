@@ -1,8 +1,6 @@
 {% load static wagtailcore_tags %}
 
-<figure class="image is-3by1">
-    <img src="https://bulma.io/images/placeholders/720x240.png">
-</figure>
+{% include 'blocks/image_banner_block.html' with src="https://bulma.io/images/placeholders/720x240.png" alt="Sample banner image" %}
 
 <section class="section-container">
     <nav class="breadcrumb" aria-label="breadcrumbs">
@@ -26,7 +24,7 @@
     </nav>
 </section>
 
-<article class="section-container article-width lobotomized-owl-margins-sm">
+<article class="section-container article-width">
     <h1 class="h1">Heading 1</h1>
     <h2 class="h2">Heading 2</h2>
     <h3 class="h3">Heading 3</h3>
@@ -34,22 +32,33 @@
     <h5 class="h5">Heading 5</h5>
     <h6 class="h6">Heading 6</h6>
 
-    <p>{% lorem 1 b random %}</p>
-    <p>{% lorem 1 b random %}</p>
-    <p>{% lorem 1 b random %}</p>
-    <p>{% lorem 1 b random %}</p>
+    <div class="lobotomized-owl-margins-sm margins-sm-top">
+        <div class="lobotomized-owl-margins-sm">
+            <p>{% lorem 1 b random %}</p>
+            <p>{% lorem 1 b random %}</p>
+            <p>{% lorem 1 b random %}</p>
+            <p>{% lorem 1 b random %}</p>
+        </div>
 
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
+        <ul>
+            <li>Item 1</li>
+            <li>
+                Item 2
+                <ul>
+                    <li>Item 2a</li>
+                    <li>Item 2b</li>
+                    <li>Item 2c</li>
+                </ul>
+            </li>
+            <li>Item 3</li>
+        </ul>
 
-    <ol>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ol>
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+    </div>
 </article>
 
 {% comment %} todo: fix width for %flex-item {% endcomment %}
@@ -69,6 +78,14 @@
 
         <div class="col">
             <div class="content">4</div>
+        </div>
+
+        <div class="col">
+            <div class="content">5</div>
+        </div>
+
+        <div class="col">
+            <div class="content">6</div>
         </div>
     </div>
 </section>
@@ -102,11 +119,7 @@
 {% comment %} todo: add image/caption examples {% endcomment %}
 
 <section class="section-container article-width">
-    {% comment %} How to add videos with Bulma: https://bulma.io/documentation/elements/image/ {% endcomment %}
-    {% comment %} note: using wagtail embed block will handle more advanced things like social media {% endcomment %}
-    <figure class="image is-16by9">
-        <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/YE7VzlLtp-4" frameborder="0" allowfullscreen></iframe>
-    </figure>
+    {% include 'blocks/video_block.html' with url="https://www.youtube.com/embed/YE7VzlLtp-4" %}
 </section>
 
 {% comment %} todo: fix width for %flex-item {% endcomment %}
@@ -150,15 +163,15 @@
     </div>
 </section>
 
+{% include 'blocks/horizontal_rule_block.html' %}
+
 <section class="section-container">
     {% include 'includes/style_guide/form_example.html' %}
 </section>
 
 {% comment %} NOTE: .conditional-section-container will only apply the section container if the child element as the class .section-has-margin {% endcomment %}
 <section class="conditional-section-container">
-    <figure class="image is-3by1">
-        <img src="https://bulma.io/images/placeholders/720x240.png">
-    </figure>
+    {% include 'blocks/image_banner_block.html' with src="https://bulma.io/images/placeholders/720x240.png" alt="Sample banner image" %}
 </section>
 
 <section class="section-container">
@@ -167,4 +180,8 @@
 
 <section class="section-container">
     {% include 'includes/style_guide/pagination_example.html' %}
+</section>
+
+<section class="section-container">
+    {% include 'includes/style_guide/form_example.html' %}
 </section>

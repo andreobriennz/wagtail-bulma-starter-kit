@@ -1,7 +1,5 @@
 'use strict'
 
-const CLOSE_ACCORDIONS_ONCLICK = true
-
 // UTILS
 function el(selector) {
     return document.querySelector(selector)
@@ -54,25 +52,12 @@ function watchAccordionItems() {
         const content = item.querySelector('[data-content]')
 
         title.addEventListener('click', () => {
-            CLOSE_ACCORDIONS_ONCLICK && closeOtherAccordions(content)
-
+            const downArrow = item.querySelector('.icon-down-arrow')
             toggleClass(content, 'display-none')
-
-            const downArrow = item.querySelector('.icon-down-arrow') // todo: use font awesome
             toggleClass(downArrow, 'rotate-180')
         }, { passive: true })
     })
 }
-
-function closeOtherAccordions(element) {
-    const accordionItems = document.querySelectorAll('[data-accordion-item] [data-content]')
-    accordionItems.forEach(item => {
-        if (element !== item) {
-            item.classList.add('display-none')
-        }
-    })
-}
-
 
 // ONLOAD
 document.addEventListener('DOMContentLoaded', () => {

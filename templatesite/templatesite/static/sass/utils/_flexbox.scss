@@ -44,12 +44,13 @@
 
 // ITEM
 %flex-item {
-    width: 100%;
+    flex: 1;
+    flex-basis: 100%;
     @media (min-width: $tablet) {
-        width: 50%;
+        flex-basis: 49%;
     }
     @media (min-width: $desktop) {
-        width: 25%;
+        flex: 1 1 24%; // todo: prevent it spanning the full width if not divisible by 4, but also have container be full width
     }
 }
 
