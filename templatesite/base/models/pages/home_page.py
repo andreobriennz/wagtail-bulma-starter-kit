@@ -1,4 +1,3 @@
-from django.apps import apps
 from django.db import models
 
 from wagtail.admin.edit_handlers import (
@@ -13,7 +12,7 @@ from base.blocks import BaseStreamBlock
 
 
 class HomePage(Page):
-    subtitle = models.CharField(max_length=255, null=True, blank=False)
+    subtitle = models.CharField(max_length=255, null=True, blank=True)
     
     banner_image = models.ForeignKey(
         "base.CustomImage",
@@ -24,7 +23,9 @@ class HomePage(Page):
     )
 
     content = StreamField(
-        BaseStreamBlock(required=False), verbose_name="Content", blank=True
+        BaseStreamBlock(required=False),
+        verbose_name="Main Content",
+        blank=True,
     )
 
     content_panels = Page.content_panels + [

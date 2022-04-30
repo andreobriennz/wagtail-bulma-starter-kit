@@ -2,7 +2,7 @@
 
 {% load static wagtailimages_tags wagtailcore_tags %}
 
-{% block body_class %}template-home-page{% endblock %}
+{% block body_class %}template-article-page{% endblock %}
 
 {% block content %}
     <div class="large-screen-container">
@@ -10,6 +10,8 @@
             {% image page.banner_image fill-2400x1600 as banner_image %}
             {% include 'blocks/image_banner_block.html' with src="{{ banner_image.url }}" alt="{{ banner_image.title }}" %}
         {% endif %}
+
+        {% include 'includes/breadcrumb.html' %}
 
         <main>
             <section class="section-container">
@@ -25,15 +27,5 @@
                 {% endfor %}
             </div>
         </main>
-    </div>
-
-    {% comment %} todo: should be moved into its own page {% endcomment %}
-    <div class="large-screen-container">
-        <br><br><br>
-        <hr>
-        <br>
-        <h1 class="h1 section-container">Style Guide<h1>
-
-        {% include 'includes/style_guide/style_guide.html' %}
     </div>
 {% endblock content %}

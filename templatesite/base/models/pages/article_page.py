@@ -11,7 +11,7 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from base.blocks import BaseStreamBlock
 
 
-class StandardPage(Page):
+class ArticlePage(Page):
     subtitle = models.CharField(max_length=255, null=True, blank=True)
     
     banner_image = models.ForeignKey(
@@ -34,7 +34,9 @@ class StandardPage(Page):
         StreamFieldPanel("content"),
     ]
 
-    child_page_types = ["base.StandardPage"]
+    parent_page_types = ["base.ArticleIndexPage"]
+
+    child_page_types = []
 
     def get_template(self, request, *args, **kwargs):
-        return "pages/standard_page.html"
+        return "pages/article_page.html"

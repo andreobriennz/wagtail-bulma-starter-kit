@@ -1,22 +1,23 @@
 .accordion {
-    border-top: $light-blue solid 1px;
+    border-top: $light-brown solid 1px;
 
     .accordion-arrow {
         float: right;
 
         i {
-            font-size: 24px;
+            font-size: 20px; // should match the font size of the button
+            font-weight: bold; // should match the font weight of the button
             padding-top: 6px;
         }
     }
 }
 
 .accordion-item {
-    border-bottom: $light-blue solid 1px;
+    border-bottom: $light-brown solid 1px;
 
     .accordion-title {
         padding: .75rem 0;
-        @extend %h4;
+        @extend %h5;
         &.unstyled-button {
             width: 100%;
             font-weight: bold;

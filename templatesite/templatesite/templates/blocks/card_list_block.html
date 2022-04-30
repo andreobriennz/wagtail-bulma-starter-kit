@@ -1,33 +1,7 @@
-<section class="section-container">
-    <div class="style-guide-grid-2">
-        {% for item in block.value.items %}
-            <div class="col">
-
-                {% comment %} The card can display an image above text, an image by itself or text by itself. {% endcomment %}
-                <div class="card">
-                    {% if item.image %}
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                            </figure>
-                        </div>
-                    {% endif %}
-
-                    {% if item.text or item.time %}
-                        <div class="card-content">
-                            <div class="content">
-                                {{ item.text }}
-                                
-                                {% if item.time %}
-                                    <br><br>
-                                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                                {% endif %}
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
-
-            </div>
-        {% endfor %}
-    </div>
+<section class="card-grid section-container">
+    {% for item in block.value.items %}
+        <div class="col">
+            {% include 'includes/card.html' with image=item.image text=item.text %}
+        </div>
+    {% endfor %}
 </section
