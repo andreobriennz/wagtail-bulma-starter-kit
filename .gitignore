@@ -1,4 +1,5 @@
 ignored_files/
+templatesite/media/
 
 # VSCode
 .vscode/*

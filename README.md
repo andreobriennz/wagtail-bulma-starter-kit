@@ -38,24 +38,29 @@ $ ./manage.py createsuperuserv
 # Branches / Versions (including road map for planned features)
 - develop: Unstable version with features still in progress and likely to have bugs.
 - 0.1 (planned for late May 2022):
-    - Basic functionality
-    - All style guide components working as includes/blocks
     - Home page, standard page, article page and article index page
+    - Most style guide components other than forms working as blocks/includes
     - Update default colors and styles
-    - Add help text and admin improvements
 - 0.2 (planned for June 2022):
+    - Styling changes to all pages
     - Update to Django 4.0
     - Add carousel
+    - Add footers
+    - Add image block and image grid with optional captions
     - Improve HTML semantics and accessibility
+    - Add help text and admin improvements
 - 0.3 (planned for August/September 2022):
     - Update to Wagtail 3.0 (this includes the new admin design which is expected to be released in August 2022)
     - Update to Django 4.1
+    - Add pagination to article list page
+    - Add search page
 - Possible future versions:
     - Integrate forms
     - Flat nav package for menus
     - Finish set up of django-debug-toolbar and consider including jupyter notebooks
     - Add CSS Grid
     - Add polyfills and the option to compile JavaScript if needed
+    - Set up Webpack and React
 
 # Misc
 * ipdb: Adding this to your code should act as a breakpoint when it runs: `import ipdb; ipdb.set_trace()`.
