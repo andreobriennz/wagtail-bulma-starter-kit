@@ -5,23 +5,25 @@
 {% block body_class %}template-standard-page{% endblock %}
 
 {% block content %}
-    {% if page.banner_image %}
-        {% image page.banner_image fill-2400x1600 as banner_image %}
-        {% include 'blocks/image_banner_block.html' with src="{{ banner_image.url }}" alt="{{ banner_image.title }}" %}
-    {% endif %}
+    <div class="large-screen-container">
+        {% if page.banner_image %}
+            {% image page.banner_image fill-2400x1600 as banner_image %}
+            {% include 'blocks/image_banner_block.html' with src="{{ banner_image.url }}" alt="{{ banner_image.title }}" %}
+        {% endif %}
 
-    <section class="section-container">
-        <h1 class="h1">{{ page.title }}</h1>
-        <h2 class="h2">{{ page.subtitle }}</h2>
-    </section>
-
-    <div class="lobotomized-owl-margins-sm">
-        {% for block in page.content %}
-            <section class="conditional-section-container large-screen-container">
-                {% include_block block %}
+        <main>
+            <section class="section-container">
+                <h1 class="h1">{{ page.title }}</h1>
+                <h2 class="h2">{{ page.subtitle }}</h2>
             </section>
-        {% endfor %}
-    </div>
 
-    <div class="section-container-bottom"></div>
+            <div class="lobotomized-owl-margins-sm">
+                {% for block in page.content %}
+                    <div class="conditional-section-container">
+                        {% include_block block %}
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
 {% endblock content %}

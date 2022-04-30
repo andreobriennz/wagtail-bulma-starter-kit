@@ -29,7 +29,7 @@ class HomePage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel("subtitle", classname="full"),
-        ImageChooserPanel("banner_image", classname="full"),
+        ImageChooserPanel("banner_image"),
         StreamFieldPanel("content"),
     ]
 

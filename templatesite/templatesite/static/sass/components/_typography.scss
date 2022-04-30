@@ -63,6 +63,9 @@
 .lobotomized-owl-margins-sm > * + * {
     margin-top: $sm-line-margins;
 }
+ul ul, ol ol {
+    padding-top: .25rem;
+}
 .richtext-block > * + * {
     margin-top: $sm-line-margins;
 }
@@ -114,23 +117,27 @@ ul ul, ol ul {
 }
 
 body .richtext-block {
-    h1 {
+    h1, h1 * {
         @extend %h1;
     }
-    h2 {
+    h2, h2 * {
         @extend %h2;
     }
-    h3 {
+    h3, h3 * {
         @extend %h3;
     }
-    h4 {
+    h4, h4 * {
         @extend %h4;
     }
-    h5 {
+    h5, h5 * {
         @extend %h5;
     }
-    h6 {
+    h6, h6 * {
         @extend %h6;
+    }
+
+    a {
+        @extend %link;
     }
 }
 

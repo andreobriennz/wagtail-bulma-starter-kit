@@ -42,8 +42,7 @@
 
         <ul>
             <li>Item 1</li>
-            <li>
-                Item 2
+            <li>Item 2
                 <ul>
                     <li>Item 2a</li>
                     <li>Item 2b</li>
@@ -92,34 +91,23 @@
 
 <section class="section-container">
     <div class="buttons">
-        <button class="button">Button</button>
-        <a class="button">Link Styled as Button</a>
+        {% include 'includes/links/button.html' with href="https://example.com" text="Default Button" %}
+        {% include 'includes/links/button.html' with type="primary" href="https://example.com" text="Primary Button" %}
+        {% include 'includes/links/button.html' with type="info" href="https://example.com" text="Info Button" %}
+        {% include 'includes/links/button.html' with type="success" href="https://example.com" text="Success Button" %}
+        {% include 'includes/links/button.html' with type="warning" href="https://example.com" text="Warning Button" %}
+        {% include 'includes/links/button.html' with type="danger" href="https://example.com" text="Danger Button" %}
     </div>
 
     <div class="buttons">
-        <button class="button is-primary">Primary Button</button>
-        <button class="button is-link">Link Styled as Button Link</button>
-    </div>
-
-
-    <div class="buttons">
-        <button class="button is-info">Info</button>
-        <button class="button is-success">Success</button>
-        <button class="button is-warning">Warning</button>
-        <button class="button is-danger">Danger</button>
-    </div>
-
-    <div class="buttons">
-        <p>A simple <a href="https://example.com" class="link">link</a> can also appear in normal text.</p>
+        {% include 'includes/links/link.html' with href="https://example.com" text="Link" %}
     </div>
 </section>
-
-{% comment %} todo: add a .content class example here: https://bulma.io/documentation/elements/content/ {% endcomment %}
 
 {% comment %} todo: add image/caption examples {% endcomment %}
 
 <section class="section-container article-width">
-    {% include 'blocks/video_block.html' with url="https://www.youtube.com/embed/YE7VzlLtp-4" %}
+    {% include 'includes/video.html' with url="https://www.youtube.com/embed/YE7VzlLtp-4" %}
 </section>
 
 {% comment %} todo: fix width for %flex-item {% endcomment %}
@@ -164,10 +152,6 @@
 </section>
 
 {% include 'blocks/horizontal_rule_block.html' %}
-
-<section class="section-container">
-    {% include 'includes/style_guide/form_example.html' %}
-</section>
 
 {% comment %} NOTE: .conditional-section-container will only apply the section container if the child element as the class .section-has-margin {% endcomment %}
 <section class="conditional-section-container">

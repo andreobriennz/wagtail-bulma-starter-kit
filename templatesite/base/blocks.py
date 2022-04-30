@@ -35,6 +35,33 @@ class VideoBlock(blocks.StructBlock):
         template = "blocks/video_block.html"
 
 
+class CardItemBlock(blocks.StructBlock):
+    image = ImageChooserBlock(required=False)
+    text = blocks.CharBlock(required=False)
+
+
+class CardListBlock(blocks.StructBlock):
+    items = blocks.ListBlock(CardItemBlock())
+
+    class Meta:
+        template = "blocks/card_list_block.html"
+
+
+class AccordionItemBlock(blocks.StructBlock):
+    title = blocks.CharBlock(required=True)
+    content = blocks.RichTextBlock(
+        template="blocks/richtext_block.html",
+        features=DEFAULT_RICHTEXT_FEATURES,
+    )
+
+
+class AccordionListBlock(blocks.StructBlock):
+    items = blocks.ListBlock(AccordionItemBlock())
+
+    class Meta:
+        template = "blocks/accordion_block.html"
+
+
 class BaseStreamBlock(blocks.StreamBlock):
     text = blocks.RichTextBlock(
         template="blocks/richtext_block.html",
@@ -42,4 +69,6 @@ class BaseStreamBlock(blocks.StreamBlock):
     )
     image_block = ImageBlock()
     video_block = VideoBlock()
+    card_list_block = CardListBlock()
+    accordion_block = AccordionListBlock()
     horizontal_rule = HorizontalRuleBlock()

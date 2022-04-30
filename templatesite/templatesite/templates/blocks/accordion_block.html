@@ -1,0 +1,16 @@
+<section class="accordion section-has-margin">
+    {% for item in block.value.items %}
+        <div data-accordion-item class="accordion-item">
+            <button data-title class="accordion-title unstyled-button">
+                {{ item.title }}
+                <span class="accordion-arrow">
+                    <i class="icon-down-arrow fas fa-chevron-down"></i>
+                </span>
+            </button>
+
+            <div data-content class="accordion-content display-none">
+                {% include 'includes/richtext.html' with value=item.content %}
+            </div>
+        </div>
+    {% endfor %}
+</section>

@@ -25,6 +25,10 @@
     }
 
     .accordion-content {
-        padding-bottom: .75rem;
+        padding-bottom: 24px;
+
+        .richtext-block {
+            margin: 0;
+        }
     }
 }
