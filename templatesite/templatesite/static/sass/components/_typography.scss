@@ -19,14 +19,14 @@
 }
 
 %heading {
-    font-weight: 800;
+    font-weight: 700;
     color: $black;
     line-height: 1.5;
     // margin-top: 0.25rem; // todo not working
 }
 
 %small-heading {
-    font-weight: 600;
+    font-weight: 400;
     color: $black;
     line-height: 1.5;
     // margin-top: 0.25rem; // todo not working
@@ -46,16 +46,16 @@
     font-size: 32px;
 }
 %h4 {
-    @extend %heading;
-    font-size: 24px;
+    @extend %small-heading;
+    font-size: 32px;
 }
 %h5 {
-    @extend %heading;
-    font-size: 20px;
+    @extend %small-heading;
+    font-size: 24px;
 }
 %h6 {
-    @extend %heading;
-    font-size: 16px;
+    @extend %small-heading;
+    font-size: 20px;
 }
 
 .lobotomized-owl-margins-lg > * + * {

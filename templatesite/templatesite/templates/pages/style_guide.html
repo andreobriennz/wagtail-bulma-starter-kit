@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body_class %}template-style-guide-page{% endblock %}
+
+{% block content %}
+    <div class="large-screen-container">
+        <h1 class="h1 section-container">{{ page.title }}<h1>
+
+        {% include 'includes/style_guide/style_guide.html' %}
+    </div>
+{% endblock content %}

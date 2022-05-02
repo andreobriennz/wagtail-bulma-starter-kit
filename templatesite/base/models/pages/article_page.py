@@ -15,12 +15,14 @@ class ArticlePage(Page):
     subtitle = models.CharField(max_length=255, null=True, blank=True)
     
     banner_image = models.ForeignKey(
-        "base.CustomImage",
+        "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
     )
+
+    display_breadcrumbs = models.BooleanField(default=False, null=False)
 
     content = StreamField(
         BaseStreamBlock(required=False),
@@ -31,6 +33,7 @@ class ArticlePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("subtitle", classname="full"),
         ImageChooserPanel("banner_image"),
+        FieldPanel("display_breadcrumbs"),
         StreamFieldPanel("content"),
     ]
 
@@ -39,4 +42,4 @@ class ArticlePage(Page):
     child_page_types = []
 
     def get_template(self, request, *args, **kwargs):
-        return "pages/article_page.html"
+        return "pages/standard_page.html"

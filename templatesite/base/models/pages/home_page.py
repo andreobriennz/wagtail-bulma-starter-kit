@@ -15,7 +15,7 @@ class HomePage(Page):
     subtitle = models.CharField(max_length=255, null=True, blank=True)
     
     banner_image = models.ForeignKey(
-        "base.CustomImage",
+        "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
@@ -37,4 +37,4 @@ class HomePage(Page):
     parent_page_types = []
 
     def get_template(self, request, *args, **kwargs):
-        return "pages/home_page.html"
+        return "pages/standard_page.html"

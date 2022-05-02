@@ -15,7 +15,7 @@ class StandardPage(Page):
     subtitle = models.CharField(max_length=255, null=True, blank=True)
     
     banner_image = models.ForeignKey(
-        "base.CustomImage",
+        "wagtailimages.Image",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
