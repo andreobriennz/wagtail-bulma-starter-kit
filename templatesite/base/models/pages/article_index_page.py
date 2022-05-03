@@ -29,7 +29,8 @@ class ArticleIndexPage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        context["articles"] = ArticlePage.objects.live().public()
+        articles = ArticlePage.objects.live().public()
+        context["articles"] = list(articles)
         return context
 
     def get_template(self, request, *args, **kwargs):

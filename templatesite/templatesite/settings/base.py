@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'wagtail.admin',
     'wagtail.core',
 
+    'wagtail.contrib.settings',
+    'wagtail.contrib.modeladmin',
+    'wagtailmenus',
+
     'modelcluster',
     'taggit',
 
@@ -77,6 +81,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'wagtail.contrib.settings.context_processors.settings',
+                'wagtailmenus.context_processors.wagtailmenus',
             ],
         },
     },
@@ -171,3 +177,8 @@ WAGTAILSEARCH_BACKENDS = {
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+WAGTAILMENUS_FLAT_MENUS_HANDLE_CHOICES = (
+    ("nav_links", "Nav Links"),
+    ("footer_links", "Footer Links"),
+)

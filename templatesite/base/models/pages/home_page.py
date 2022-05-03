@@ -34,7 +34,5 @@ class HomePage(Page):
         StreamFieldPanel("content"),
     ]
 
-    parent_page_types = []
-
     def get_template(self, request, *args, **kwargs):
         return "pages/standard_page.html"

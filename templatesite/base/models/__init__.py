@@ -1,2 +1,2 @@
-from .images import *
+from .settings import *
 from .pages import *

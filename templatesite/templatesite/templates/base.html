@@ -30,11 +30,19 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% include 'includes/nav.html' %}
+        <a href="#main-content" class="skip-to-content-button button is-primary">Skip to main content</a>
 
-        {% block content %}{% endblock %}
+        {% include 'includes/navigation/nav.html' %}
+
+        <main id="main-content">
+            {% block content %}{% endblock %}
+        </main>
+
+        {% comment %} Update after setup: Select small/large footer and add content for it {% endcomment %}
+        {% include 'includes/navigation/footer_small.html' %}
 
         <script type="text/javascript" src="{% static 'js/components.js' %}"></script>
+        {% comment %} Update after setup: Add custom JavaScript here {% endcomment %}
         <script type="text/javascript" src="{% static 'js/templatesite.js' %}"></script>
     </body>
 </html>

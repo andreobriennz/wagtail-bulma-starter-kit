@@ -18,9 +18,12 @@
             </section>
 
             <div class="card-grid section-container">
-                {% for article in page.articles %}
+                {% for article in articles %}
                     <div class="col">
-                        {% include 'includes/card.html' with image=item.image text=item.text %}
+                        {% image article.banner_image fill-500x500 as image %}
+                        <a href="{{ article.slug }}" class="with-card-hover-effect" aria-label="View {{ article.title }}">
+                            {% include 'includes/card.html' with image=image text=article.title %}
+                        </a>
                     </div>
                 {% empty %}
                     <h2 class="h5">No articles found</h2>
