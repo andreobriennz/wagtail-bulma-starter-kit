@@ -1,0 +1,12 @@
+// https://getcssscan.com/css-box-shadow-examples
+
+%md-shadow {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px; // #5 modified
+}
+
+%md-shadow-with-hover {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px; // #5 modified
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; // #5
+    }
+}
