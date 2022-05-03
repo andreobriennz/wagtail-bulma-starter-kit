@@ -1,0 +1,15 @@
+{% load menu_tags %}
+
+<footer class="footer-small footer">
+    <div class="content">
+        <div class="footer-links-list">
+            {% flat_menu 'footer_links' template="includes/navigation/menu_row.html" %}
+        </div>
+    </div>
+
+    <div class="content">
+        <p>
+            &copy; {% now "Y" %}
+        </p>
+    </div>
+</footer>
