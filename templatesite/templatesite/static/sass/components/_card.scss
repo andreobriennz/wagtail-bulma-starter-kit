@@ -1,3 +1,9 @@
+.card {
+    border-radius: $radius-large;
+    overflow: hidden;
+    @extend %md-shadow;
+}
+
 .card-grid {
     @extend %flex-wrap;
     gap: $column-gap;
@@ -7,15 +13,14 @@
 
         .card {
             background-color: $very-light-brown;
-            border-radius: $radius-large;
-            overflow: hidden;
-            @extend %md-shadow-with-hover;
+            height: 100%;
         }
     }
 }
 
 .with-card-hover-effect .card, .card.with-card-hover-effect {
     transition: .1s;
+    @extend %md-shadow-with-hover;
 
     &:hover {
         margin-top: -.33rem;

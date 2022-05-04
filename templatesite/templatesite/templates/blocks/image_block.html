@@ -1,1 +1,4 @@
-{% include 'includes/image.html' %}
+{% load wagtailimages_tags %}
+
+{% image value.image fill-1000x1000 as image %}
+{% include 'includes/image.html' with src=image.url alt=image.title classname="card section-container article-width" %}

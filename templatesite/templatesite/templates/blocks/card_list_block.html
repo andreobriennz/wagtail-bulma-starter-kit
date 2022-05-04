@@ -1,7 +1,10 @@
+{% load wagtailimages_tags %}
+
 <section class="card-grid section-container">
     {% for item in block.value.items %}
         <div class="col">
-            {% include 'includes/card.html' with image=item.image text=item.text %}
+            {% image item.image fill-500x500 as image %}
+            {% include 'includes/card.html' with image=image text=item.text %}
         </div>
     {% endfor %}
 </section

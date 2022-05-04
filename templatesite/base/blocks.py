@@ -20,7 +20,10 @@ class ImageBlock(blocks.StructBlock):
 
 
 class ImageBannerBlock(blocks.StructBlock):
-    image = ImageChooserBlock(required=True)
+    image = ImageChooserBlock(
+        required=True,
+        help_text="A full width banner, so should be a large high resolution photo (at least 1920x640px).",
+    )
 
     class Meta:
         label = "Image"
@@ -28,7 +31,10 @@ class ImageBannerBlock(blocks.StructBlock):
 
 
 class VideoBlock(blocks.StructBlock):
-    url = blocks.CharBlock(required=True)
+    url = blocks.CharBlock(
+        required=True,
+        help_text="A link to a video on YouTube or Vimeo (eg https://www.youtube.com/embed/YE7VzlLtp-4).",
+    )
     
     class Meta:
         label = "Video"
@@ -44,6 +50,7 @@ class CardListBlock(blocks.StructBlock):
     items = blocks.ListBlock(CardItemBlock())
 
     class Meta:
+        help_text = "A group of cards, each containing some text and/or an image."
         template = "blocks/card_list_block.html"
 
 
