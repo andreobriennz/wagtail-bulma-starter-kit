@@ -24,8 +24,6 @@ class ArticlePage(Page):
         related_name="+",
     )
 
-    display_breadcrumbs = models.BooleanField(default=False, null=False)
-
     content = StreamField(
         BaseStreamBlock(required=False),
         verbose_name="Main Content",
@@ -35,13 +33,17 @@ class ArticlePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("subtitle", classname="full"),
         ImageChooserPanel("banner_image"),
-        FieldPanel("display_breadcrumbs"),
         StreamFieldPanel("content"),
     ]
 
     parent_page_types = ["base.ArticleIndexPage"]
 
     child_page_types = []
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["display_breadcrumbs"] = True
+        return context
 
     def get_template(self, request, *args, **kwargs):
         return "pages/standard_page.html"

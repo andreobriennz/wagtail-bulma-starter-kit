@@ -32,15 +32,11 @@ class ArticleIndexPage(Page):
         context = super().get_context(request, *args, **kwargs)
 
         page = request.GET.get('page', 1)
-
         articles = ArticlePage.objects.live().public()
-
         paginated_articles = Paginator(articles, 10)
 
         context["paginated_articles"] = paginated_articles
-        context["articles"] = list(
-            paginated_articles.page(page)
-        )
+        context["articles"] = list( paginated_articles.page(page) )
         context["current_page"] = page
 
         return context
