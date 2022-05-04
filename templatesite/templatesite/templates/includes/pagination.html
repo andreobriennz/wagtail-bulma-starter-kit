@@ -5,7 +5,7 @@
             {% for page_num in pagination.page_range %}
                 <li>
                     <a
-                        href="?query={{ request.GET.query }}&page={{ page_num }}"
+                        href="?query={{ query|urlencode }}&page={{ page_num }}"
                         class="pagination-link {% if page_num == current_page %}is-current{% endif %}"
                         aria-label="Goto page {{ page_num }}"
                     >

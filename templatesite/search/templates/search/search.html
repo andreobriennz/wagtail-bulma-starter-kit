@@ -6,33 +6,53 @@
 {% block title %}Search{% endblock %}
 
 {% block content %}
-    <h1>Search</h1>
+    <div class="large-screen-container">
+        <div>
+            <h1 class="h1 section-container">Search</h1>
 
-    <form action="{% url 'search' %}" method="get">
-        <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-        <input type="submit" value="Search" class="button">
-    </form>
+            {% comment %} Search form {% endcomment %}
+            <div class="form-container section-container">
+                <form action="{% url 'search' %}" method="get">
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <input class="input is-medium" type="text" name="query" placeholder="Search..." {% if search_query %}value="{{ search_query }}"{% endif %}>
+                        </div>
+                        <div class="control">
+                            <input type="submit" value="Search" class="button is-primary is-medium">
+                        </div>
+                    </div>
+                </form>
+            </div>
 
-    {% if search_results %}
-        <ul>
-            {% for result in search_results %}
-                <li>
-                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
-                    {% if result.search_description %}
-                        {{ result.search_description }}
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
+            {% if search_results %}
+                {% comment %} Search results {% endcomment %}
+                <ul class="search-results section-container-x">
+                    {% for result in search_results %}
+                        <li class="search-result">
+                            <a href="{% pageurl result %}" class="section-container-y lobotomized-owl-margins-sm" aria-label="View {{ result }}">
+                                <h2 class="h5 link">{{ result }}</h2>
+                                <p>
+                                {% if result.search_description %}
+                                    {{ result.search_description }}
+                                {% elif result.specific.description %}
+                                    {{ result.specific.subtitle }}
+                                {% elif result.specific.subtitle %}
+                                    {{ result.specific.subtitle }}
+                                {% endif %}
+                                </p>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% elif search_query %}
+                <p class="h5 section-container">No results found</p>
+            {% endif %}
 
-        {% if search_results.has_previous %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
-        {% endif %}
 
-        {% if search_results.has_next %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
-        {% endif %}
-    {% elif search_query %}
-        No results found
-    {% endif %}
+            {% comment %} Pagination {% endcomment %}
+            <div class="section-container">
+                {% include 'includes/pagination.html' with pagination=search_results query=search_query %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

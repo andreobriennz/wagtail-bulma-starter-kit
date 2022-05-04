@@ -13,7 +13,9 @@ from base.blocks import BaseStreamBlock
 
 class ArticlePage(Page):
     subtitle = models.CharField(max_length=255, null=True, blank=True)
-    
+
+    description = models.CharField(max_length=255, null=True, blank=True, help_text="Used in cards which link to the article (not the article itself)")
+
     banner_image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,

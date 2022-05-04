@@ -35,7 +35,7 @@ class ArticleIndexPage(Page):
 
         articles = ArticlePage.objects.live().public()
 
-        paginated_articles = Paginator(articles, 2)
+        paginated_articles = Paginator(articles, 10)
 
         context["paginated_articles"] = paginated_articles
         context["articles"] = list(

@@ -16,6 +16,26 @@
     }
 }
 
+.section-container-x {
+    margin: 0 1rem;
+    @media (min-width: $tablet) {
+        margin: 0 2rem;
+    }
+    @media (min-width: $desktop) {
+        margin: 0 3rem;
+    }
+}
+
+.section-container-y {
+    margin: 1rem 0;
+    @media (min-width: $tablet) {
+        margin: 2rem 0;
+    }
+    @media (min-width: $desktop) {
+        margin: 3rem 0;
+    }
+}
+
 .heading-container {
     margin: 1rem 1rem 6rem;
     @media (min-width: $tablet) {

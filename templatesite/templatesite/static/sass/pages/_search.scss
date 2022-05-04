@@ -1,1 +1,16 @@
-// todo: create a default search page
+.search-results {
+    list-style-type: none;
+
+    .search-result {
+        &:not(:first-of-type) {
+            border-top: solid 2px $light-brown;
+        }
+
+        a {
+            display: block;
+            &:hover .link {
+                border-bottom: none;
+            }
+        }
+    }
+}
