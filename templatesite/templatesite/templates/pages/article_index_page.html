@@ -11,7 +11,7 @@
             {% include 'blocks/image_banner_block.html' with src="{{ banner_image.url }}" alt="{{ banner_image.title }}" %}
         {% endif %}
 
-        <main>
+        <div>
             <section class="section-container">
                 <h1 class="h1">{{ page.title }}</h1>
                 {% if page.subtitle %}<h2 class="h3">{{ page.subtitle }}</h2>{% endif %}
@@ -29,6 +29,10 @@
                     <h2 class="h5">No articles found</h2>
                 {% endfor %}
             </div>
-        </main>
+
+            <div class="section-container">
+                {% include 'includes/pagination.html' with pagination=paginated_articles %}
+            </div>
+        </div>
     </div>
 {% endblock content %}

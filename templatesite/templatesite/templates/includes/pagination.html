@@ -1,0 +1,18 @@
+
+{% if pagination.num_pages > 1 %}
+    <nav class="pagination" aria-label="pagination">
+        <ul class="pagination-list">
+            {% for page_num in pagination.page_range %}
+                <li>
+                    <a
+                        href="?query={{ request.GET.query }}&page={{ page_num }}"
+                        class="pagination-link {% if page_num == current_page %}is-current{% endif %}"
+                        aria-label="Goto page {{ page_num }}"
+                    >
+                        {{ page_num }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %}

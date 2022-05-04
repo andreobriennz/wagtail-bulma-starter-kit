@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.paginator import Paginator
 
 from wagtail.admin.edit_handlers import (
     FieldPanel,
@@ -29,8 +30,19 @@ class ArticleIndexPage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
+
+        page = request.GET.get('page', 1)
+
         articles = ArticlePage.objects.live().public()
-        context["articles"] = list(articles)
+
+        paginated_articles = Paginator(articles, 2)
+
+        context["paginated_articles"] = paginated_articles
+        context["articles"] = list(
+            paginated_articles.page(page)
+        )
+        context["current_page"] = page
+
         return context
 
     def get_template(self, request, *args, **kwargs):
