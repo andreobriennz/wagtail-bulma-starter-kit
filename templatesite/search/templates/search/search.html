@@ -48,10 +48,8 @@
                 <p class="h5 section-container">No results found</p>
             {% endif %}
 
-
-            {% comment %} Pagination {% endcomment %}
             <div class="section-container">
-                {% include 'includes/pagination.html' with pagination=search_results query=search_query %}
+                {% include 'includes/pagination.html' with pagination=search_results.paginator query=search_query %}
             </div>
         </div>
     </div>
