@@ -1,36 +1,38 @@
 {% load wagtailimages_tags menu_tags %}
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        {{ navbar_logo }}
-        <a class="navbar-item" href="/">
-            {% image settings.base.ImageSettings.navbar_logo height-160 as navbar_logo %}
-            <img src="{{ navbar_logo.url }}" alt="Logo" height="28">
-        </a>
+<div class="large-screen-container">
+    <nav class="navbar section-container-x" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            {{ navbar_logo }}
+            <a class="navbar-item" href="/">
+                {% image settings.base.ImageSettings.navbar_logo height-160 as navbar_logo %}
+                <img src="{{ navbar_logo.url }}" alt="Logo" height="28">
+            </a>
 
-        <a id="nav-hamburger" role="button" class="navbar-burger" onclick="return window.toggleNav();" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-
-    <div id="mobile-nav" class="navbar-menu">
-        <div class="navbar-start">
-            {% flat_menu 'nav_links' template="includes/navigation/menu_row.html" classname="navbar-item" %}
+            <a id="nav-hamburger" role="button" class="navbar-burger" onclick="return window.toggleNav();" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
 
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                        Log in
-                    </a>
+        <div id="mobile-nav" class="navbar-menu">
+            <div class="navbar-start">
+                {% flat_menu 'nav_links' template="includes/navigation/menu_row.html" classname="navbar-item" %}
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light">
+                            Log in
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</div>

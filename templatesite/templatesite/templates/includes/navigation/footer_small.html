@@ -1,15 +1,19 @@
 {% load menu_tags %}
 
-<footer class="footer-small footer">
-    <div class="content">
-        <div class="footer-links-list">
-            {% flat_menu 'footer_links' template="includes/navigation/menu_row.html" %}
-        </div>
-    </div>
+<div class="footer-small footer">
+    <div class="large-screen-container">
+        <footer class="section-container-x">
+            <div class="content">
+                <div class="footer-links-list">
+                    {% flat_menu 'footer_links' template="includes/navigation/menu_row.html" %}
+                </div>
+            </div>
 
-    <div class="content">
-        <p>
-            &copy; {% now "Y" %}
-        </p>
+            <div class="content">
+                <p>
+                    &copy; {% now "Y" %}
+                </p>
+            </div>
+        </footer>
     </div>
-</footer>
+</div>
