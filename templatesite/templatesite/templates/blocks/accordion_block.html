@@ -9,7 +9,9 @@
             </button>
 
             <div data-content class="accordion-content display-none">
-                {% include 'includes/richtext.html' with value=item.content %}
+                <article class="richtext-block section-has-margin article-width">
+                    {{ item.content }}
+                </article>
             </div>
         </div>
     {% endfor %}
