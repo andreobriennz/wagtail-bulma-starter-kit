@@ -7,6 +7,19 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 
 
 @register_setting
+class SiteSettings(BaseSetting):
+    seo_site_description = models.CharField(
+        null=True,
+        max_length=160,
+        help_text="Used by search engines when there is not a specific description for the page. Should be between 50 and 160 characters (any longer and the text may be truncated by many search engines."
+    )
+
+    panels = [
+        FieldPanel("seo_site_description"),
+    ]
+
+
+@register_setting
 class ContactSettings(BaseSetting):
     email = models.EmailField(null=True)
 
