@@ -8,6 +8,13 @@
         padding: 3rem 3rem;
     }
 
+    footer {
+        // section-container-x on very large monitors
+        @media (min-width: 1970px) {
+            margin: 0 3rem;
+        }
+    }
+
     .footer-links-list {
         display: flex;
         flex-wrap: wrap;
