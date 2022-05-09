@@ -5,8 +5,7 @@
         <div class="navbar-brand">
             {{ navbar_logo }}
             <a class="navbar-item" href="/">
-                {% image settings.base.ImageSettings.navbar_logo height-160 as navbar_logo %}
-                <img src="{{ navbar_logo.url }}" alt="Logo" height="28">
+                {% image settings.base.ImageSettings.navbar_logo height-160 %}
             </a>
 
             <a id="nav-hamburger" role="button" class="navbar-burger" onclick="return window.toggleNav();" aria-label="menu" aria-expanded="false">
