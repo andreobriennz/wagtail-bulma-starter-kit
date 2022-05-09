@@ -1,4 +1,4 @@
-{% load wagtailimages_tags menu_tags %}
+{% load wagtailimages_tags %}
 
 <div class="large-screen-container">
     <nav class="navbar section-container-x" role="navigation" aria-label="main navigation">
@@ -17,7 +17,7 @@
 
         <div id="mobile-nav" class="navbar-menu">
             <div class="navbar-start">
-                {% flat_menu 'nav_links' template="includes/navigation/menu_row.html" classname="navbar-item" %}
+                {% include 'includes/navigation/menu_row.html' %}
             </div>
 
             <div class="navbar-end">

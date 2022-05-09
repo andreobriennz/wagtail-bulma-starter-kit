@@ -1,5 +1,5 @@
 .footer-small {
-    // roughly the same as .section-container but using padding
+    // roughly the same as .section-container but using padding // todo: maybe if this doesn't use padding we can remove the large screen container style hack?
     padding: 2rem 1rem;
     @media (min-width: $tablet) {
         padding: 2rem 2rem;

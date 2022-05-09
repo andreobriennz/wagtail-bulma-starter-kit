@@ -1,11 +1,9 @@
-{% load menu_tags %}
-
 <div class="footer-small footer">
     <div class="large-screen-container">
         <footer>
             <div class="content">
                 <div class="footer-links-list">
-                    {% flat_menu 'footer_links' template="includes/navigation/menu_row.html" %}
+                    {% include 'includes/navigation/menu_row.html' %}
                 </div>
             </div>
 

@@ -1,7 +1,11 @@
 // Update after setup: SASS variables
 // See https://bulma.io/documentation/customize/variables/ and https://bulma.io/documentation/customize/concepts/ for more info
 
-// BULMA VARIABLES
+// VARIABLES
+// breakpoints
+$tablet: 768px;
+$desktop: 1280px;
+
 // initial variables (used by Bulma)
 $red: #D1345B;
 $orange: #ff9914;
@@ -46,10 +50,6 @@ $default-border-radius: $radius;
 $lg-line-margins: 1.5em;
 $sm-line-margins: .75em;
 
-// BREAKPOINTS
-$tablet: 768px;
-$desktop: 1280px;
-
 // BULMA
 @import "../../../node_modules/bulma/sass/utilities/_all";
 @import "../../../node_modules/bulma/sass/base/_all";
@@ -61,8 +61,6 @@ $desktop: 1280px;
 @import "../../../node_modules/bulma/sass/layout/_all"; // 20kb
 
 // CUSTOM STYLES
-// @import 'utils';
-
 @import '_utils.scss';
 @import '_containers.scss';
 @import '_typography.scss';
