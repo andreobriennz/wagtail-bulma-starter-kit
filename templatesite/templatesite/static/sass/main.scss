@@ -1,8 +1,56 @@
-// Custom SASS variables (used by Bulma and in custom code)
-// See https://bulma.io/documentation/customize/variables/ for more info
-@import '_variables.scss';
+// Update after setup: SASS variables
+// See https://bulma.io/documentation/customize/variables/ and https://bulma.io/documentation/customize/concepts/ for more info
 
-// Bulma Framework
+// BULMA VARIABLES
+// initial variables (used by Bulma)
+$red: #D1345B;
+$orange: #ff9914;
+$light-brown: #CEBEBE;
+$very-light-brown: lighten($light-brown, 15%);
+$medium-blue: #5ABCB9;
+$medium-green: #63E2C6;
+$black: #0A0908;
+$white: #FFF;
+$light-gray: #f5efed;
+
+// derived variables (used by Bulma)
+$primary: $medium-green;
+
+$text: $black;
+
+$button-border-color: $orange;
+$button-color: $orange;
+$button-hover-color: $white;
+$button-hover-border-color: $orange;
+
+$radius-small: 2px;
+$radius: 4px;
+$radius-large: 8px;
+$card-radius: $radius;
+$box-radius: $radius;
+
+$shadow: none;
+$card-shadow: 5px 6px 17px rgba(0, 0, 0, 0.15);
+
+$column-gap: 0.75rem;
+
+// custom variables (not related to Bulma)
+$default-border-bottom: 0;
+$border-bottom-underline: $black solid 2px;
+
+$default-font-family: 'Epilogue', sans-serif;
+
+$default-border-radius: $radius;
+
+// lobotomized owl margins
+$lg-line-margins: 1.5em;
+$sm-line-margins: .75em;
+
+// BREAKPOINTS
+$tablet: 768px;
+$desktop: 1280px;
+
+// BULMA
 @import "../../../node_modules/bulma/sass/utilities/_all";
 @import "../../../node_modules/bulma/sass/base/_all";
 @import "../../../node_modules/bulma/sass/elements/_all"; // 65kb
@@ -12,7 +60,11 @@
 @import "../../../node_modules/bulma/sass/helpers/_all"; // 30kb
 @import "../../../node_modules/bulma/sass/layout/_all"; // 20kb
 
-// Custom SASS
-@import 'utils';
-@import 'components';
+// CUSTOM STYLES
+// @import 'utils';
+
+@import '_utils.scss';
+@import '_containers.scss';
+@import '_typography.scss';
+@import 'includes';
 @import 'pages';

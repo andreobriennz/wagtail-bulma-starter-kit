@@ -1,0 +1,75 @@
+.display-none {
+    display: none;
+}
+
+.unstyled-button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+    text-align: left;
+}
+
+.fit-bg-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.fit-image {
+    object-fit: cover;
+}
+
+// FLEXBOX
+// todo: move this somewhere else?
+%flex-item {
+    flex: 1;
+    flex-basis: 100%;
+    @media (min-width: $tablet) {
+        flex-basis: 49%;
+    }
+    @media (min-width: $desktop) {
+        flex: 1 1 24%; // todo: prevent it spanning the full width if not divisible by 4, but also have container be full width
+    }
+}
+
+// BOX SHADOW
+// https://getcssscan.com/css-box-shadow-examples
+%md-shadow {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px; // #5 modified
+}
+
+%md-shadow-with-hover {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px; // #5 modified
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; // #5
+    }
+}
+
+// ANIMATION / TRANSFORM
+@media (prefers-reduced-motion: no-preference) {
+    @media (min-width: $desktop) {
+        .hover\:scale-small:hover {
+            transform: scale(1.033);
+        }
+        .hover\:scale-medium:hover {
+            transform: scale(1.066);
+        }
+    }
+
+    .transition-fast {
+        transition: .2s;
+    }
+    .transition-medium {
+        transition: .4s;
+    }
+    .transition-slow {
+        transition: .75s;
+    }
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}

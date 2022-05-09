@@ -145,10 +145,16 @@ body .richtext-block {
 hr {
     background-color: $light-brown;
 }
+
 .hr {
     margin: 2rem 0;
     margin: 0;
 }
+
 figure .hr {
     margin: .25rem 0;
+}
+
+li {
+    margin-bottom: .25rem;
 }

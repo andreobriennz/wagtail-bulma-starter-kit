@@ -9,7 +9,8 @@
     }
 
     .footer-links-list {
-        @extend %flex-wrap;
+        display: flex;
+        flex-wrap: wrap;
         gap: $column-gap;
     
         .col {

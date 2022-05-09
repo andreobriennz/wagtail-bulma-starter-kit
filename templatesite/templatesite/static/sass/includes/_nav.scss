@@ -1,4 +1,10 @@
 .navbar-brand {
+    .navbar-item {
+        img {
+            width: auto;
+        }
+    }
+
     .navbar-item:first-of-type {
         padding-left: 0;
     }
