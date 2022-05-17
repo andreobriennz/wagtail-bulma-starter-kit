@@ -1,13 +1,37 @@
 from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 
+from wagtail_link_block.blocks import LinkBlock
 
+
+MINIMAL_RICHTEXT_FEATURES = ["bold", "br"]
 DEFAULT_RICHTEXT_FEATURES = ["h2", "h3", "h4", "bold", "ol", "ul", "link", "document-link", "br"]
+
+
+class ButtonBlock(blocks.StructBlock):
+    text = blocks.CharBlock(required=True)
+    style = blocks.ChoiceBlock(
+        choices=[("primary", "Primary"), ("secondary", "Secondary")],
+        default="primary",
+        blank=True,
+    )
+    link = LinkBlock()
+
+
+class ButtonsBlock(blocks.StructBlock):
+    items = blocks.ListBlock(
+        ButtonBlock(required=False, blank=True),
+        blank=True,
+    )
+
+    class Meta:
+        label = "Button(s)"
+        template = "blocks/buttons.html"
 
 
 class HorizontalRuleBlock(blocks.StaticBlock):
     class Meta:
-        label = "Horizontal line"
+        label = "Horizontal Line"
         template = "blocks/horizontal_rule_block.html"
 
 
@@ -22,12 +46,34 @@ class ImageBlock(blocks.StructBlock):
 class ImageBannerBlock(blocks.StructBlock):
     image = ImageChooserBlock(
         required=True,
-        help_text="A full width banner, so should be a large high resolution photo (at least 1920x640px).",
+        help_text="A full width banner, so should be a large high resolution photo (use photos which are at least 1920x640px).",
     )
 
     class Meta:
-        label = "Image"
+        label = "Image Banner"
         template = "blocks/image_banner_block.html"
+
+
+class CTABannerBlock(blocks.StructBlock):
+    image = ImageChooserBlock(
+        required=True,
+        help_text="A banner which is 50% width on desktop (use photos which are at least 960x600px).",
+    )
+    image_side = blocks.ChoiceBlock(choices=[
+        ('left', 'Left'),
+        ('right', 'Right'),
+    ])
+    title = blocks.CharBlock(required=False)
+    text = blocks.RichTextBlock(
+        template="blocks/richtext_block.html",
+        features=MINIMAL_RICHTEXT_FEATURES,
+        required=False
+    )
+    buttons = ButtonsBlock(required=False, blank=True)
+
+    class Meta:
+        label = "Call to Action"
+        template = "blocks/cta_banner_block.html"
 
 
 class VideoBlock(blocks.StructBlock):
@@ -50,6 +96,7 @@ class CardListBlock(blocks.StructBlock):
     items = blocks.ListBlock(CardItemBlock())
 
     class Meta:
+        label = "Card List"
         help_text = "A group of cards, each containing some text and/or an image."
         template = "blocks/card_list_block.html"
 
@@ -60,6 +107,9 @@ class AccordionItemBlock(blocks.StructBlock):
         template="blocks/richtext_block.html",
         features=DEFAULT_RICHTEXT_FEATURES,
     )
+
+    class Meta:
+        label = "Accordion"
 
 
 class AccordionListBlock(blocks.StructBlock):
@@ -74,7 +124,9 @@ class BaseStreamBlock(blocks.StreamBlock):
         template="blocks/richtext_block.html",
         features=DEFAULT_RICHTEXT_FEATURES,
     )
+    buttons_block = ButtonsBlock()
     image_block = ImageBlock()
+    cta_banner_block = CTABannerBlock()
     video_block = VideoBlock()
     card_list_block = CardListBlock()
     accordion_block = AccordionListBlock()

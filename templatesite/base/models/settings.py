@@ -6,6 +6,9 @@ from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 
+MINIMAL_RICHTEXT_FEATURES = ["bold", "br"]
+
+
 @register_setting
 class SiteSettings(BaseSetting):
     seo_site_description = models.CharField(
@@ -25,7 +28,7 @@ class ContactSettings(BaseSetting):
 
     phone = models.CharField(null=True, max_length=50)
 
-    address = RichTextField(null=True, features=["bold", "br"])
+    address = RichTextField(null=True, features=MINIMAL_RICHTEXT_FEATURES)
 
     panels = [
         FieldPanel("email"),

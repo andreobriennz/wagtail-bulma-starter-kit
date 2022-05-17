@@ -1,0 +1,7 @@
+<div class="buttons are-medium">
+    {% for button in buttons %}
+        <a href="{{ button.link.get_url }}" class="button {% if button.style == 'primary' %}is-primary has-text-weight-bold{% else %}is-secondary is-light{% endif %}">
+            {{ button.text }}
+        </a>
+    {% endfor %}
+</div>

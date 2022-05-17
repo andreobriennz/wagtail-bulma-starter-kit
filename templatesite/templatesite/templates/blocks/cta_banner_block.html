@@ -1,0 +1,16 @@
+{% load wagtailimages_tags %}
+
+<section class="cta-banner image-is-{{ block.value.image_side }} section-has-margin">
+    <figure class="image col __is-3by1 fit-image">
+        {% image block.value.image fill-960x600 %}
+    </figure>
+
+    <div class="main-content col">
+        {% if block.value.title %}<h2 class="h2">{{ block.value.title }}</h2>{% endif %}
+        {% if block.value.text %}<p>{{ block.value.text }}</p>{% endif %}
+
+        {% if block.value.buttons %}
+            {% include 'blocks/buttons.html' with buttons=block.value.buttons.items %}
+        {% endif %}
+    </div>
+</section>

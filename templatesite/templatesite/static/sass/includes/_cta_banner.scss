@@ -1,0 +1,26 @@
+.cta-banner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    &.image-is-right {
+        flex-direction: row-reverse;
+    }
+
+    .col {
+        @extend %flex-item;
+
+    }
+
+    h2 {
+        font-weight: 800;
+    }
+
+    .main-content p {
+        font-size: 1.25rem;
+    }
+
+    .buttons {
+        margin-top: 5rem;
+    }
+}
