@@ -119,6 +119,20 @@ class AccordionListBlock(blocks.StructBlock):
         template = "blocks/accordion_block.html"
 
 
+class CarouselItemBlock(blocks.StructBlock):
+    image = ImageChooserBlock(required=False)
+    title = blocks.CharBlock(required=False)
+    text = blocks.CharBlock(required=False)
+
+
+class CarouselListBlock(blocks.StructBlock):
+    items = blocks.ListBlock(CarouselItemBlock())
+
+    class Meta:
+        label = "Carousel"
+        template = "blocks/slick_slider.html"
+
+
 class BaseStreamBlock(blocks.StreamBlock):
     text = blocks.RichTextBlock(
         template="blocks/richtext_block.html",
@@ -131,3 +145,4 @@ class BaseStreamBlock(blocks.StreamBlock):
     card_list_block = CardListBlock()
     accordion_block = AccordionListBlock()
     horizontal_rule = HorizontalRuleBlock()
+    # carousel = CarouselListBlock() # uncomment only if a carousel is required

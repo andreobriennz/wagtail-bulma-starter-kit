@@ -6,7 +6,7 @@
 }
 
 .section-container,
-.conditional-section-container .section-has-margin {
+.conditional-section-container .allow-section-margin {
     margin: 1rem 1rem;
     @media (min-width: $tablet) {
         margin: 2rem 2rem;

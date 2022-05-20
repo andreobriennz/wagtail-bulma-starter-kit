@@ -1,4 +1,4 @@
-<section class="accordion section-has-margin">
+<section class="accordion allow-section-margin">
     {% for item in block.value.items %}
         <div data-accordion-item class="accordion-item">
             <button data-title class="accordion-title unstyled-button">
@@ -9,7 +9,7 @@
             </button>
 
             <div data-content class="accordion-content display-none">
-                <article class="richtext-block section-has-margin article-width">
+                <article class="richtext-block allow-section-margin article-width">
                     {{ item.content }}
                 </article>
             </div>
