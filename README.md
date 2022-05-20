@@ -19,7 +19,7 @@ Note that this also doesn't include the Bulma flexbox grid by default, however t
 ```
 $ pip install -r requirements.txt
 $ ./manage.py migrate
-$ ./manage.py createsuperuserv
+$ ./manage.py createsuperuser
 ```
 
 ## Front-end Setup
@@ -38,9 +38,9 @@ $ ./manage.py createsuperuserv
 - 0.1 (planned for late May 2022):
     - Basic setup with Django 4.0 and Wagtail 2.16 (to make the transition to Wagtail version 3 easier later)
     - Home page, standard page, article page and article index page
-    - All style_guide.html components other than forms are working and able to be updated via the backend
+    - Main components other than forms are working and able to be updated via the backend
     - Some default styling including automatic margins
-    - A simple nav and footer with customizable links and logo
+    - A simple nav and footer (requires being hardcoded until wagtailmenus is updated to support Django 4)
 - 0.2 (planned for June/July 2022)
     - More customizable variables
     - More grid sizes
