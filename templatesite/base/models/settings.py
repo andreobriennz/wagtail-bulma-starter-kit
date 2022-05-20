@@ -1,9 +1,8 @@
 from django.db import models
 
-from wagtail.admin.edit_handlers import FieldPanel
-from wagtail.core.fields import RichTextField
+from wagtail.admin.panels import FieldPanel
+from wagtail.fields import RichTextField
 from wagtail.contrib.settings.models import BaseSetting, register_setting
-from wagtail.images.edit_handlers import ImageChooserPanel
 
 
 MINIMAL_RICHTEXT_FEATURES = ["bold", "br"]
@@ -48,5 +47,5 @@ class ImageSettings(BaseSetting):
     )
     
     panels = [
-        ImageChooserPanel("navbar_logo"),
+        FieldPanel("navbar_logo"),
     ]

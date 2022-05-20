@@ -2,8 +2,8 @@
 
 import base.blocks
 from django.db import migrations
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 import wagtail.images.blocks
 
 
@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='homepage',
             name='content',
-            field=wagtail.core.fields.StreamField([('text', wagtail.core.blocks.RichTextBlock(features=['h2', 'h3', 'h4', 'bold', 'ol', 'ul', 'link', 'document-link', 'br'], template='blocks/richtext_block.html')), ('image_block', wagtail.core.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock(required=True))])), ('video', wagtail.core.blocks.StructBlock([('url', wagtail.core.blocks.CharBlock(required=True))])), ('horizontal_rule', base.blocks.HorizontalRuleBlock())], blank=True, verbose_name='Content'),
+            field=wagtail.fields.StreamField([('text', wagtail.blocks.RichTextBlock(features=['h2', 'h3', 'h4', 'bold', 'ol', 'ul', 'link', 'document-link', 'br'], template='blocks/richtext_block.html')), ('image_block', wagtail.blocks.StructBlock([('image', wagtail.images.blocks.ImageChooserBlock(required=True))])), ('video', wagtail.blocks.StructBlock([('url', wagtail.blocks.CharBlock(required=True))])), ('horizontal_rule', base.blocks.HorizontalRuleBlock())], blank=True, verbose_name='Content'),
         ),
     ]

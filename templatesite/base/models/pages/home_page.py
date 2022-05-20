@@ -1,12 +1,8 @@
 from django.db import models
 
-from wagtail.admin.edit_handlers import (
-    FieldPanel,
-    StreamFieldPanel,
-)
-from wagtail.core.models import Page
-from wagtail.core.fields import StreamField
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.admin.panels import FieldPanel
+from wagtail.models import Page
+from wagtail.fields import StreamField
 
 from base.blocks import BaseStreamBlock
 
@@ -30,8 +26,8 @@ class HomePage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel("subtitle", classname="full"),
-        ImageChooserPanel("banner_image"),
-        StreamFieldPanel("content"),
+        FieldPanel("banner_image"),
+        FieldPanel("content"),
     ]
 
     def get_template(self, request, *args, **kwargs):

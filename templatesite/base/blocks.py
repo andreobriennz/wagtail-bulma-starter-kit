@@ -1,4 +1,4 @@
-from wagtail.core import blocks
+from wagtail import blocks
 from wagtail.images.blocks import ImageChooserBlock
 
 from wagtail_link_block.blocks import LinkBlock
@@ -109,13 +109,14 @@ class AccordionItemBlock(blocks.StructBlock):
     )
 
     class Meta:
-        label = "Accordion"
+        label = "Accordion Item"
 
 
 class AccordionListBlock(blocks.StructBlock):
-    items = blocks.ListBlock(AccordionItemBlock())
+    accordion_items = blocks.ListBlock(AccordionItemBlock())
 
     class Meta:
+        label = "Accordion Block"
         template = "blocks/accordion_block.html"
 
 
