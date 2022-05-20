@@ -1,0 +1,35 @@
+{% load wagtailimages_tags %}
+
+<div class="simple-slick-slider allow-section-margin">
+    {% for item in block.value.items %}
+        <div>
+            {% image item.image fill-500x500 as image %}
+            <div class="slider-item card fit-bg-image" {% if image.url %}style="background-image: url({{ image.url }})"{% endif %}>
+                <h3 class="h2">{{ item.title }}</h3>
+                <p>{{ item.text }}<p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% comment %} Update after setup: uncomment if using Slick Slider. Remove defer attribute if needed. {% endcomment %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" integrity="sha512-jGR1T3dQerLCSm/IGEGbndPwzszJBlKQ5Br9vuB0Pw2iyxOy+7AK+lJcCC8eaXyz/9du+bkCy4HXxByhxkHf+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    'use strict'
+
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     $('.simple-slick-slider').slick({
+    //         slidesToShow: 1,
+    //         slidesToScroll: 1,
+    //         {% if block.value.items|length > 1 %}
+    //         dots: true,
+    //         arrows: true,
+    //         {% else %}
+    //         dots: false,
+    //         arrows: false,
+    //         {% endif %}
+    //     })
+    // }, false)
+</script>
